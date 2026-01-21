@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Nebula Engine",
+    "description": "Moteur de jeu 3D en temps reel. Développement théorique d'un moteur avec implémentation complète d'un rendu avec OpenGL, gestion des ressources, système de composants (ECS) et pipeline de rendu moderne.",
+    "image": "https://picsum.photos/seed/ecommerce/600/400",
+    "tags": ["OpenGL", "C++", "Cmake", "ECS"],
+    "link": "https://github.com/Dorian-2000/NebulaEngine"
+  },
+  {
+    "id": 2,
+    "title": "Last pulse",
+    "description": "Jeu vidéo de type runner platformer en 3D développé avec Unreal Engine 5.4. J'ai occupé le poste de chef de projet, coordonnant une équipe de 20 personnes pour assurer le déroulement efficace du développement du jeu.",
+    "image": "https://picsum.photos/seed/dashboard/600/400",
+    "tags": ["Unreal Engine", "C++", "Agile", "Management", "leadership", "Game Design"],
+    "link": "https://github.com/OutcastsGameStudio/LP"
+  },
+  {
+    "id": 3,
+    "title": "BeBoids",
+    "description": "Démo en temps réel d'un système de boids simulant le comportement collectif d'un groupe d'êtres vivants sur unreal engine 5.",
+    "image": "https://picsum.photos/seed/fitness/600/400",
+    "tags": ["Unreal Engine", "C++", "Boids Algorithm", "Optimization"],
+    "link": "https://github.com/Dorian-2000/BeBoids"
+  },
+  {
+    "id": 4,
+    "title": "Solar System",
+    "description": "Simulation du système solaire avec gestion des orbites, gravité et rendu 3D en temps réel sur Unreal Engine 5.",
+    "image": "https://picsum.photos/seed/blog/600/400",
+    "tags": ["Unreal Engine", "C++", "Gravity simulation"],
+    "link": "https://github.com/Dorian-2000/SolarSystem"
+  },
+  {
+    "id": 5,
+    "title": "EvolGame",
+    "description": "Application Reward Tracker RPG, effectuer une activité vous fait gagner des points d'expérience et des statistiques pour votre personnage virtuel.",
+    "image": "https://picsum.photos/seed/api/600/400",
+    "tags": ["Go", "Docker", "Kubernetes", "gRPC"],
+    "link": "https://github.com/Dorian-2000/EvolGame"
+  }
+]
