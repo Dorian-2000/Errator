@@ -30,13 +30,5 @@
     "image": "https://picsum.photos/seed/blog/600/400",
     "tags": ["Unreal Engine", "C++", "Gravity simulation"],
     "link": "https://github.com/Dorian-2000/SolarSystem"
-  },
-  {
-    "id": 5,
-    "title": "EvolGame",
-    "description": "Application Reward Tracker RPG, effectuer une activité vous fait gagner des points d'expérience et des statistiques pour votre personnage virtuel.",
-    "image": "https://picsum.photos/seed/api/600/400",
-    "tags": ["Go", "Docker", "Kubernetes", "gRPC"],
-    "link": "https://github.com/Dorian-2000/EvolGame"
   }
 ]
