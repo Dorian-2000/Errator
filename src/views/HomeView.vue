@@ -15,7 +15,7 @@ onMounted(() => {
     <div class="container">
       <div class="hero" :class="{ visible: isVisible }">
         <div class="hero-image">
-          <img src="/src/assets/me.jpg" alt="Photo de profil" />
+          <img src="/me.JPG" alt="Photo de profil" />
         </div>
 
         <div class="hero-content">

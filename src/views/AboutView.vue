@@ -4,13 +4,11 @@ import { ref, onMounted } from 'vue'
 const isVisible = ref(false)
 
 const skills = [
-  { category: 'Backend', items: ['.NET 4.2 to 8', 'ASP .NET CORE', 'SQL Server', 'MongoDB', 'REST APIs'] },
-  { category: 'Frontend', items: ['Vue.js', 'React', 'TypeScript', 'HTML/CSS', 'Tailwind CSS'] },
-  {category: 'Agile', items: ['Scrum', 'Kanban', 'Jira', 'Trello', 'Github project', 'lean'] },
-  { category: 'Outils', items: ['Git', 'Docker', 'VS', 'Azure', 'WSL'] },
-  { category: 'Methodologies', items: ['TDD', 'DDD', 'Clean Architecture', 'Microservices', 'CI/CD'] },
-  { category: 'Frameworks', items: ['Entity Framework', 'AutoMapper', 'SignalR'] },
-  { category: 'Langages', items: ['C#', 'JavaScript', 'TypeScript', 'Python', 'C++'] },
+  { category: 'Backend', items: ['.NET', 'Javascript', 'SignalR', 'AutoMapper', 'Clean Architecture'] },
+  { category: 'Frontend', items: ['Vue.js', 'React.js', 'TypeScript', 'HTML/CSS', 'Tailwind CSS', 'Angular.js'] },
+  { category: 'Outils', items: ['Git', 'Docker', 'VS', 'Azure', 'WSL', 'Jira', 'Github'] },
+  { category: 'Methodologies', items: ['Scrum', 'Kanban', 'lean', 'TDD', 'DDD', 'Microservices', 'CI/CD'] },
+  { category: 'Game développement', items: ['Unreal engine', 'C++', 'Unity', 'C#', 'Cmake', 'OpenGl', 'Vulkan', 'Assembleur'] }
 ]
 
 const timeline = [
