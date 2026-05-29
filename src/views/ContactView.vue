@@ -19,9 +19,10 @@ onMounted(() => {
   <section class="contact section">
     <div class="container">
       <div class="contact-header" :class="{ visible: isVisible }">
-        <h1 class="section-title">Contact</h1>
+        <span class="eyebrow">Contact</span>
+        <h1 class="section-title">Travaillons <span class="gradient-text">ensemble</span></h1>
         <p class="section-subtitle">
-          Une question ou un projet ? N'hesitez pas a me contacter
+          Une question ou un projet ? N'hésitez pas à me contacter
         </p>
       </div>
 
@@ -72,10 +73,10 @@ onMounted(() => {
 <style scoped>
 .contact-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .contact-header.visible {
@@ -87,8 +88,8 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
 }
 
 .contact-content.visible {
@@ -97,54 +98,73 @@ onMounted(() => {
 }
 
 .info-card {
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  padding: 2.5rem;
-  border-radius: var(--radius);
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  padding: 2.75rem;
+  border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
   text-align: center;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  width: 70%;
+  height: 60%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(212, 175, 55, 0.18), transparent);
+  pointer-events: none;
 }
 
 .info-card h3 {
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--color-accent);
+  margin-bottom: 0.85rem;
+  color: var(--color-text);
 }
 
 .info-card > p {
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 2rem;
 }
 
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.85rem;
   padding: 1rem;
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
   color: var(--color-text);
+  font-weight: 500;
   text-decoration: none;
   transition: all var(--transition);
 }
 
 .social-link:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: white;
+  background: var(--glass-bg-hover);
+  border-color: rgba(8, 127, 68, 0.5);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-colored);
+  box-shadow: var(--glow-green);
 }
 
 .social-link svg {
@@ -152,20 +172,26 @@ onMounted(() => {
 }
 
 .email-link {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: white;
-  font-weight: 500;
+  background: var(--gradient-gold);
+  border-color: transparent;
+  color: #1a1400;
+  font-weight: 600;
+  box-shadow: 0 10px 30px -14px rgba(212, 175, 55, 0.7);
 }
 
 .email-link:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--gradient-gold);
+  color: #1a1400;
+  box-shadow: var(--glow-gold);
 }
 
 @media (max-width: 480px) {
   .info-card {
-    padding: 1.5rem;
+    padding: 1.75rem;
+  }
+
+  .social-link span {
+    font-size: 0.9rem;
   }
 }
 </style>

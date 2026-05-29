@@ -114,8 +114,10 @@ const goToSlide = (index) => {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--color-bg-elevated);
-  border: 2px solid var(--color-border);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   color: var(--color-text);
   display: flex;
   align-items: center;
@@ -125,10 +127,11 @@ const goToSlide = (index) => {
 }
 
 .carousel-btn:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--gradient-green);
+  border-color: transparent;
   color: white;
-  box-shadow: var(--shadow-colored);
+  transform: scale(1.08);
+  box-shadow: var(--glow-green);
 }
 
 .carousel-content {
@@ -144,10 +147,12 @@ const goToSlide = (index) => {
 .project-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+  gap: 0;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
   text-decoration: none;
@@ -160,22 +165,32 @@ const goToSlide = (index) => {
 }
 
 .project-card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-colored);
-  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--glow-green);
+  border-color: rgba(8, 127, 68, 0.5);
 }
 
 .project-image {
-  height: 300px;
+  position: relative;
+  height: 340px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.project-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 55%, rgba(17, 19, 17, 0.85) 100%);
+  pointer-events: none;
+}
+
 .project-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   transition: transform var(--transition);
 }
 
@@ -185,8 +200,8 @@ const goToSlide = (index) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-muted, #f0f0f0);
-  color: var(--color-border, #ccc);
+  background: var(--color-bg-tertiary);
+  color: var(--color-border-light);
 }
 
 .project-card:hover .project-image img {
@@ -194,16 +209,18 @@ const goToSlide = (index) => {
 }
 
 .project-info {
-  padding: 2rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 300px;
+  min-height: 340px;
 }
 
 .project-title {
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
   margin-bottom: 1rem;
   color: var(--color-text);
 }
@@ -243,23 +260,22 @@ const goToSlide = (index) => {
 }
 
 .indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid var(--color-border);
-  background: transparent;
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  border: none;
+  background: var(--color-border-light);
   cursor: pointer;
   transition: all var(--transition);
 }
 
 .indicator:hover {
-  border-color: var(--color-accent);
   background: var(--color-accent);
 }
 
 .indicator.active {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  width: 28px;
+  background: var(--gradient-gold);
 }
 
 .carousel-counter {
@@ -334,20 +350,24 @@ const goToSlide = (index) => {
   .carousel-btn {
     display: flex;
     position: absolute;
-    top: 50%;
+    top: 170px;
     transform: translateY(-50%);
     z-index: 10;
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(8, 10, 8, 0.7);
+  }
+
+  .carousel-btn:hover {
+    transform: translateY(-50%) scale(1.08);
   }
 
   .carousel-btn.prev {
-    left: 0.5rem;
+    left: 0.75rem;
   }
 
   .carousel-btn.next {
-    right: 0.5rem;
+    right: 0.75rem;
   }
 }
 </style>

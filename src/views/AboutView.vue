@@ -55,9 +55,10 @@ onMounted(() => {
   <section class="about section">
     <div class="container">
       <div class="about-header" :class="{ visible: isVisible }">
-        <h1 class="section-title">A propos</h1>
+        <span class="eyebrow">À propos</span>
+        <h1 class="section-title">Mon parcours &amp; <span class="gradient-text">compétences</span></h1>
         <p class="section-subtitle">
-          Apprenez-en plus sur mon parcours et mes competences
+          Apprenez-en plus sur mon parcours et mes compétences
         </p>
       </div>
 
@@ -121,8 +122,8 @@ onMounted(() => {
   text-align: center;
   margin-bottom: 4rem;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .about-header.visible {
@@ -131,17 +132,20 @@ onMounted(() => {
 }
 
 .about-content h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
   color: var(--color-text);
 }
 
+/* Intro dans une carte verre */
 .about-intro {
   margin-bottom: 4rem;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
 }
 
 .about-intro.visible {
@@ -149,22 +153,44 @@ onMounted(() => {
   transform: translateY(0);
 }
 
+.intro-text {
+  position: relative;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.intro-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gradient-brand);
+}
+
 .intro-text p {
   color: var(--color-text-secondary);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  max-width: 800px;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+  max-width: 760px;
 }
 
 .intro-text p:last-child {
   margin-bottom: 0;
 }
 
+/* Compétences */
 .skills-section {
   margin-bottom: 4rem;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
 }
 
 .skills-section.visible {
@@ -174,54 +200,73 @@ onMounted(() => {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
 }
 
 .skill-category {
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  padding: 2rem;
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 1.75rem;
   border-radius: var(--radius);
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background var(--transition);
 }
 
 .skill-category:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-colored);
+  transform: translateY(-5px);
+  background: var(--glass-bg-hover);
+  border-color: rgba(8, 127, 68, 0.5);
+  box-shadow: var(--glow-green);
 }
 
 .skill-category h3 {
-  font-size: 1.125rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   color: var(--color-accent);
 }
 
 .skill-category ul {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .skill-category li {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
+  gap: 0.45rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.84rem;
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-category li:hover {
   color: var(--color-text);
+  border-color: rgba(8, 127, 68, 0.5);
 }
 
 .skill-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: var(--color-primary-light);
 }
 
+/* Timeline */
 .timeline-section {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
 }
 
 .timeline-section.visible {
@@ -231,22 +276,22 @@ onMounted(() => {
 
 .timeline {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 2.25rem;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
   width: 2px;
-  background: var(--color-border);
+  background: linear-gradient(to bottom, var(--color-primary-light), rgba(212, 175, 55, 0.5), transparent);
 }
 
 .timeline-item {
   position: relative;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .timeline-item:last-child {
@@ -255,76 +300,85 @@ onMounted(() => {
 
 .timeline-marker {
   position: absolute;
-  left: -2rem;
-  top: 0;
+  left: -2.25rem;
+  top: 8px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--color-accent);
-  border: 3px solid var(--color-bg);
-  box-shadow: 0 0 0 2px var(--color-border);
-  transform: translateX(-5px);
+  box-shadow: 0 0 0 4px var(--color-bg), 0 0 12px rgba(212, 175, 55, 0.5);
   transition: all var(--transition);
 }
 
 .timeline-item:hover .timeline-marker {
-  background: var(--color-primary);
-  box-shadow: 0 0 0 2px var(--color-primary);
-  transform: translateX(-5px) scale(1.2);
+  background: var(--color-primary-light);
+  box-shadow: 0 0 0 4px var(--color-bg), 0 0 16px rgba(8, 127, 68, 0.7);
+  transform: scale(1.3);
 }
 
 .timeline-content {
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   padding: 1.5rem;
   border-radius: var(--radius);
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background var(--transition);
 }
 
 .timeline-item:hover .timeline-content {
-  transform: translateX(4px);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-colored);
+  transform: translateX(6px);
+  background: var(--glass-bg-hover);
+  border-color: rgba(8, 127, 68, 0.45);
+  box-shadow: var(--shadow);
 }
 
 .timeline-year {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background: var(--color-primary);
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 500;
+  padding: 0.28rem 0.8rem;
+  background: rgba(8, 127, 68, 0.18);
+  border: 1px solid rgba(8, 127, 68, 0.4);
+  color: #7fdca7;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 600;
   border-radius: 9999px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .timeline-content h3 {
-  font-size: 1.125rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .timeline-company {
-  color: var(--color-text-secondary);
-  font-size: 0.875rem;
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
   display: block;
   margin-bottom: 0.75rem;
 }
 
 .timeline-content p {
   color: var(--color-text-secondary);
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.65;
   margin: 0;
 }
 
 @media (max-width: 768px) {
   .about-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  .intro-text {
+    padding: 1.75rem;
   }
 }
 </style>

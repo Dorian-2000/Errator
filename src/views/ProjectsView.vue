@@ -18,9 +18,10 @@ onMounted(() => {
   <section class="projects section">
     <div class="container">
       <div class="section-header" :class="{ visible: isLoaded }">
-        <h1 class="section-title">Mes Projets</h1>
+        <span class="eyebrow">Réalisations</span>
+        <h1 class="section-title">Mes <span class="gradient-text">projets</span></h1>
         <p class="section-subtitle">
-          Découvrez une selection de mes realisations.
+          Découvrez une sélection de mes réalisations.
         </p>
       </div>
 

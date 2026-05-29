@@ -31,9 +31,12 @@ onUnmounted(() => {
     <div class="app">
         <header class="header" :class="{ scrolled: isScrolled }">
             <nav class="nav">
-                <router-link to="/" class="logo" @click="closeMenu">Portfolio</router-link>
+                <router-link to="/" class="logo" @click="closeMenu">
+                    <span class="logo-mark">DB</span>
+                    <span class="logo-text">Portfolio</span>
+                </router-link>
 
-                <button class="menu-toggle" @click="toggleMenu" :aria-expanded="isMenuOpen">
+                <button class="menu-toggle" @click="toggleMenu" :aria-expanded="isMenuOpen" aria-label="Menu">
                     <span class="menu-icon" :class="{ open: isMenuOpen }"></span>
                 </button>
 
@@ -89,78 +92,99 @@ onUnmounted(() => {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-border);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.header.scrolled {
-    box-shadow: 0 2px 20px rgba(6, 80, 45, 0.2);
-    border-color: var(--color-primary);
+    transition: padding var(--transition);
+    padding: 1rem 0;
 }
 
 .nav {
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.65rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+}
+
+/* La barre devient une "pilule" flottante en verre une fois scrollé */
+.header.scrolled {
+    padding: 0.6rem 1.5rem;
+}
+
+.header.scrolled .nav {
+    background: rgba(8, 10, 8, 0.72);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+    border-color: var(--glass-border);
+    box-shadow: 0 12px 40px -16px rgba(0, 0, 0, 0.8);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     text-decoration: none;
-    transition: color var(--transition);
 }
 
-.logo:hover {
-    color: var(--color-primary);
+.logo-mark {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: var(--gradient-green);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 6px 18px -8px rgba(8, 127, 68, 0.8);
+    transition: transform var(--transition);
+}
+
+.logo:hover .logo-mark {
+    transform: rotate(-6deg) scale(1.05);
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 0.4rem;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .nav-links a {
-    color: var(--color-text);
+    display: block;
+    color: var(--color-text-secondary);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color var(--transition-fast), background var(--transition-fast);
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-accent);
-    transition: width 0.3s ease;
+.nav-links a:hover {
+    color: var(--color-text);
+    background: var(--glass-bg-hover);
 }
 
-.nav-links a:hover,
 .nav-links a.active {
-    color: var(--color-accent);
-}
-
-.nav-links a.active::after {
-    background: var(--color-primary);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
+    color: #fff;
+    background: rgba(8, 127, 68, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(8, 127, 68, 0.45);
 }
 
 .menu-toggle {
@@ -213,13 +237,13 @@ onUnmounted(() => {
 
 .main {
     flex: 1;
-    margin-top: 80px;
+    margin-top: 84px;
 }
 
 .footer {
-    background: var(--color-bg-elevated);
-    border-top: 1px solid var(--color-border);
-    padding: 2rem;
+    border-top: 1px solid var(--glass-border);
+    background: rgba(8, 10, 8, 0.4);
+    padding: 2.25rem;
     text-align: center;
     color: var(--color-text-muted);
     font-size: 0.875rem;
@@ -248,24 +272,27 @@ onUnmounted(() => {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.98);
+        background: rgba(5, 6, 5, 0.97);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
-           padding-top: 15vh;
+        gap: 1rem;
+        padding-top: 12vh;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .nav-links.open {
-           opacity: 1;
-           visibility: visible;
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links a {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        padding: 0.75rem 1.75rem;
     }
 }
 </style>
