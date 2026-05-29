@@ -50,7 +50,7 @@ const goToSlide = (index) => {
               rel="noopener noreferrer"
               class="project-card"
             >
-              <div class="project-image">
+              <div v-if="currentProject.image" class="project-image">
                 <img :src="currentProject.image" :alt="currentProject.title" />
               </div>
               <div class="project-info">
@@ -59,7 +59,7 @@ const goToSlide = (index) => {
                 <div class="project-tags">
                   <span v-for="tag in currentProject.tags" :key="tag" class="tag">{{ tag }}</span>
                 </div>
-                <span class="project-link">
+                <span v-if="currentProject.link" class="project-link">
                   Voir le projet
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -140,6 +140,7 @@ const goToSlide = (index) => {
   position: relative;
 }
 
+
 .project-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -154,6 +155,10 @@ const goToSlide = (index) => {
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
+.project-card:not(:has(.project-image)) {
+  grid-template-columns: 1fr;
+}
+
 .project-card:hover {
   transform: scale(1.02);
   box-shadow: var(--shadow-colored);
@@ -163,13 +168,25 @@ const goToSlide = (index) => {
 .project-image {
   height: 300px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   transition: transform var(--transition);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-muted, #f0f0f0);
+  color: var(--color-border, #ccc);
 }
 
 .project-card:hover .project-image img {
@@ -181,6 +198,7 @@ const goToSlide = (index) => {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 300px;
 }
 
 .project-title {

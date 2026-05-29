@@ -1,25 +1,21 @@
 [
   {
     "id": 1,
-    "title": "Nebula Engine",
-    "description": "Moteur de jeu 3D en temps reel. Développement théorique d'un moteur avec implémentation complète d'un rendu avec OpenGL, gestion des ressources, système de composants (ECS) et pipeline de rendu moderne.",
-    "image": "https://picsum.photos/seed/ecommerce/600/400",
-    "tags": ["OpenGL", "C++", "Cmake", "ECS"],
-    "link": "https://github.com/Dorian-2000/NebulaEngine"
+    "title": "PULSE",
+    "description": "Supervision des bornes de recharge électrique. Modernisation de la solution framework 4.8 en .NET 8.Intégration d'un environnement peer-to-peer avec websocket et norme OCPP.",
+    "tags": [".NET", "C#", "WebForms", "OCPP", "WEBSOCKETS", "SQL Server"]
   },
   {
     "id": 2,
-    "title": "Last pulse",
-    "description": "Jeu vidéo de type runner platformer en 3D développé avec Unreal Engine 5.4. J'ai occupé le poste de chef de projet, coordonnant une équipe de 20 personnes pour assurer le déroulement efficace du développement du jeu.",
-    "image": "https://picsum.photos/seed/dashboard/600/400",
-    "tags": ["Unreal Engine", "C++", "Agile", "Management", "leadership", "Game Design"],
-    "link": "https://github.com/OutcastsGameStudio/LP"
+    "title": "TEST END TO END",
+    "description": "Solution de testes automatisés gherkins de toute une application web .net 8. Intégration dans une pipeline Azure DevOps. Utilisation de requnroll pour la gestion des tests.",
+    "tags": ["Reqnroll", ".NET", "Agile", "Event hub", "SBQ"]
   },
   {
     "id": 3,
     "title": "BeBoids",
     "description": "Démo en temps réel d'un système de boids simulant le comportement collectif d'un groupe d'êtres vivants sur unreal engine 5.",
-    "image": "https://picsum.photos/seed/fitness/600/400",
+    "image": "./public/Boids.gif",
     "tags": ["Unreal Engine", "C++", "Boids Algorithm", "Optimization"],
     "link": "https://github.com/Dorian-2000/BeBoids"
   },
@@ -27,8 +23,21 @@
     "id": 4,
     "title": "Solar System",
     "description": "Simulation du système solaire avec gestion des orbites, gravité et rendu 3D en temps réel sur Unreal Engine 5.",
-    "image": "https://picsum.photos/seed/blog/600/400",
+    "image": "./public/SolarSystem.gif",
     "tags": ["Unreal Engine", "C++", "Gravity simulation"],
     "link": "https://github.com/Dorian-2000/SolarSystem"
+  },
+  {
+    "id": 5,
+    "title": "OCPI",
+    "description": "Solution de communication entre Gireve et Pulse. Implémentation contrat OCPI. .NET 8",
+    "tags": [".NET", "C#", "OCPI", "Web API", "Clean Architecture"]
+  },
+  {
+    "id": 6,
+    "title": "Last pulse",
+    "description": "Jeu vidéo de type runner platformer en 3D développé avec Unreal Engine 5.4. J'ai occupé le poste de chef de projet, coordonnant une équipe de 20 personnes pour assurer le déroulement efficace du développement du jeu.",
+    "image": "./public/LP.gif",
+    "tags": ["Unreal Engine", "C++", "Agile", "Project Management", "Game Development"]
   }
 ]

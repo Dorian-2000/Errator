@@ -4,14 +4,20 @@ import { ref, onMounted } from 'vue'
 const isVisible = ref(false)
 
 const skills = [
-  { category: 'Backend', items: ['.NET', 'Javascript', 'SignalR', 'AutoMapper', 'Clean Architecture'] },
-  { category: 'Frontend', items: ['Vue.js', 'React.js', 'TypeScript', 'HTML/CSS', 'Tailwind CSS', 'Angular.js'] },
+  { category: 'Backend', items: ['.NET', 'C#', 'SignalR'] },
+  { category: 'Frontend', items: ['Vue.js', 'React.js', 'TypeScript', 'HTML/CSS', 'Angular.js'] },
   { category: 'Outils', items: ['Git', 'Docker', 'VS', 'Azure', 'WSL', 'Jira', 'Github'] },
-  { category: 'Methodologies', items: ['Scrum', 'Kanban', 'lean', 'TDD', 'DDD', 'Microservices', 'CI/CD'] },
+  { category: 'Methodologies', items: ['Scrum', 'Kanban', 'lean', 'TDD', 'DDD', 'Microservices', 'CI/CD', 'Clean architecture'] },
   { category: 'Game développement', items: ['Unreal engine', 'C++', 'Unity', 'C#', 'Cmake', 'OpenGl', 'Vulkan', 'Assembleur'] }
 ]
 
 const timeline = [
+  {
+    year: '2025',
+    title: 'Intervenant C++ et Unreal Engine',
+    company: 'Auto-entreprise',
+    description: 'Intervention en tant que formateur C++ et Unreal Engine pour des étudiants.'
+  },
   {
     year: '2025 - Present',
     title: 'Concepteur logiciel Junior',
@@ -60,18 +66,18 @@ onMounted(() => {
           <div class="intro-text">
             <h2>Qui suis-je ?</h2>
             <p>
-              J\’ai choisi la programmation par curiosité, 
+              J’ai choisi la programmation par curiosité, 
               je suis resté par passion. La raison ? Nous façonnons des
-              solutions avec nos mains.
+              solutions avec nos connaissances.
             </p>
             <p>
-              Après 5 ans d\’études en informatique, j\’ai acquis une solide base dans plusieurs domaines du développement logiciel.
-              J'ai pue participer a divers projets, m'aidant a developper mes competences techniques et ma capacite a travailler en equipe.
-              Curieux de nature, j\’aime apprendre de nouvelles technologies et relever des défis complexes.
+              Après 5 ans d’études en informatique, j’ai acquis une solide base dans plusieurs domaines du développement logiciel.
+              J'ai pu participer à divers projets, m'aidant à développer mes compétences techniques et ma capacité à travailler en équipe.
+              Curieux de nature, j’aime apprendre de nouvelles technologies et relever des défis complexes.
             </p>
             <p>
-              En dehors du code, je suis l'heureux papa d'une petite fille qui me pousse chaque jour a devenir une meilleure version de moi-meme.
-              Je fais également partie d'un collectif qui développe sur leur temps libre des projets fun et innovants. Améliorant en continue mes compétences en développement.
+              En dehors du code, je suis l'heureux papa d'une petite fille qui me pousse chaque jour à devenir une meilleure version de moi-même.
+              Je fais également partie d'un collectif qui développe sur leur temps libre des projets jeux vidéo ou applications. Améliorant en continue mes compétences en développement.
             </p>
           </div>
         </div>

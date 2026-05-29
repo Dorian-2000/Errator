@@ -30,7 +30,7 @@ onMounted(() => {
           <h3>Retrouvez-moi</h3>
           <p>
             N'hesitez pas a me suivre sur GitHub ou LinkedIn ou a me contacter
-            directement par email pour discuter de vos projets.
+            directement par email pour discuter d'une éventuelle collaboration.
           </p>
 
           <div class="social-links">
