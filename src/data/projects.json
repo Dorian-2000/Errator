@@ -15,7 +15,7 @@
     "id": 3,
     "title": "BeBoids",
     "description": "Démo en temps réel d'un système de boids simulant le comportement collectif d'un groupe d'êtres vivants sur unreal engine 5.",
-    "image": "./public/Boids.gif",
+    "image": "/Boids.gif",
     "tags": ["Unreal Engine", "C++", "Boids Algorithm", "Optimization"],
     "link": "https://github.com/Dorian-2000/BeBoids"
   },
@@ -23,7 +23,7 @@
     "id": 4,
     "title": "Solar System",
     "description": "Simulation du système solaire avec gestion des orbites, gravité et rendu 3D en temps réel sur Unreal Engine 5.",
-    "image": "./public/SolarSystem.gif",
+    "image": "/SolarSystem.gif",
     "tags": ["Unreal Engine", "C++", "Gravity simulation"],
     "link": "https://github.com/Dorian-2000/SolarSystem"
   },
@@ -37,7 +37,7 @@
     "id": 6,
     "title": "Last pulse",
     "description": "Jeu vidéo de type runner platformer en 3D développé avec Unreal Engine 5.4. J'ai occupé le poste de chef de projet, coordonnant une équipe de 20 personnes pour assurer le déroulement efficace du développement du jeu.",
-    "image": "./public/LP.gif",
+    "image": "/LP.gif",
     "tags": ["Unreal Engine", "C++", "Agile", "Project Management", "Game Development"]
   }
 ]
