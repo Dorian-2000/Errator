@@ -29,15 +29,33 @@
   },
   {
     "id": 5,
-    "title": "OCPI",
-    "description": "Solution de communication entre Gireve et Pulse. Implémentation contrat OCPI. .NET 8",
-    "tags": [".NET", "C#", "OCPI", "Web API", "Clean Architecture"]
-  },
-  {
-    "id": 6,
     "title": "Last pulse",
     "description": "Jeu vidéo de type runner platformer en 3D développé avec Unreal Engine 5.4. J'ai occupé le poste de chef de projet, coordonnant une équipe de 20 personnes pour assurer le déroulement efficace du développement du jeu.",
     "image": "/LP.gif",
     "tags": ["Unreal Engine", "C++", "Agile", "Project Management", "Game Development"]
+  },
+  {
+    "id": 6,
+    "title": "Five Minute Before",
+    "description": "",
+    "image": "/5MB.png",
+    "tags": ["Game", "RockSalad"],
+    "link": "https://rock-salad.itch.io/5mb4"
+  },
+  {
+    "id": 7,
+    "title": "Strooop",
+    "description": "",
+    "image": "/Stroop.png",
+    "tags": ["Game", "RockSalad"],
+    "link": "https://rock-salad.itch.io/strooop"
+  },
+  {
+    "id": 8,
+    "title": "Tasty War",
+    "description": "",
+    "image": "/TastyWar.png",
+    "tags": ["Game", "RockSalad"],
+    "link": "https://rock-salad.itch.io/tastywar"
   }
 ]
